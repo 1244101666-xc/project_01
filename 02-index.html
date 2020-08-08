@@ -31,6 +31,35 @@
     <!-- git rm -f index.js  从仓库、工作区中移除文件 -->
 
     <!-- git rm --cached index.css  移除仓库中的文件 -->
+
+
+    <!-- .gitignore文件 忽略规则 -->
+    <!-- 1.忽略所有的 .a结尾的文件  *.a -->
+    <!-- 但是忽略lib.a这个文件  ！lib.a-->
+    <!-- 2.只忽略当前目录下的todo文件，而不忽略suBdir/doto     /todo-->
+    <!-- 3.忽略任何目录下名为 build 的文件夹  build/ -->
+    <!-- 4.忽略 doc/notes.txt  但不忽略dov/server/arch.txt  doc/*.txt -->
+    <!-- 5.忽略doc/ 目录及其所有子目录下的 .pdf文件  doc/**/*.pdf -->
+
+
+    <!-- 日志查看  git log -->
+    <!-- 让日志打印的有规则性 git log -2 --pretty=format:"%h | %an | %ar |%s" -->
+
+
+    <!-- 在一行上展示所有的提交历史  
+        git log --pretty=oneline
+    -->
+
+    <!-- 根据指定的提交ID回退到指定的版本
+        git reset --hard 提交ID
+    -->
+
+    <!-- 在旧版本中又想回到最终的版本  先查看历史的操作的命令
+        git reflog --pretty=oneline
+        git reset --hard 提交ID
+    -->
+
+
     <script src="./index.js"></script>
 </body>
 
