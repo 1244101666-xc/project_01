@@ -13,7 +13,7 @@
 
     <!-- clear   清理窗口-->
     <!-- git status -s  检查 -->
-    <!-- git add index.html  把index.html 放入git -->
+    <!-- git add index.html/.  把index.html/所有修改的文件 放入git暂存区 -->
     <!-- git commit -m "提交描述"  提交文件并描述-->
 
     <!-- 修改之后的文件需要再 git add 才会同步 -->
@@ -67,6 +67,82 @@
 
     <!-- 将更新的代码推送到github上   git push -->
 
+
+    <!-- 生成 ssh key  免每次更新输入用户名/密码
+        
+        1.在终端执行：ssh-keygen -t rsa -b 4096 -C "邮箱" 
+        2.在c盘用户下 会生成.ssh的文件
+        3.打开.ssh文件 找到id_rsa.pub，复制里面的密钥，
+        4.在github中的图像下找到 settings -- ssh and gpg keys- new ssh key
+        5.描述title 和粘贴key的密钥
+
+        验证配置是否成功：
+        在终端中输入：ssh -T git@github.com
+        提示是否继续输入：yes
+        会提示：用户名-successful 
+-->
+
+
+    <!-- 将新建的文件上传到github
+            1.在项目文件下，打开git 终端串口
+            2.git init  初始化git仓库
+            3.git add .  将文件放到git的暂存区
+            4.git commit -a -m ""  提交
+        
+        -->
+
+    <!-- 从github上可能项目 -ssh 
+            1. git clone  项目仓库地址
+        -->
+
+    <!--1. 查看分支列表  git branch -->
+    <!--2. 创建新的分支 git branch login -->
+    <!--3.切换到login分支 git checkout login-->
+
+    <!--4.快速的创建分支并切换到分支上 git checkout -b reg-->
+
+    <!-- 分支的合并
+        1.切换到master 上 执行： 
+        git checkout master
+        2.合并login分支
+        git merge login（分支名称）
+
+        **注意合并前，需要在分支上提交修改的代码，再切换到主分支上合并
+        3.合并后需要在主分支上删除分支： git branch -d login（分支名称）  -D 是强制删除
+
+        不同的分支修改并提交了同一个文件，在主分支上删除小分支，会报错，这是需要程序员自己手动去修复不通处
+        ，修改完后，需要再次：git add . 提交到git暂存区 后再次 git commit -m "" 提交
+         
+    -->
+
+    <!-- 将分支提交到远程仓库github中 
+        1.git push -u origin reg:register   --修改上传到github中的分支名称
+        或git push -u origin reg            --保持原名称
+        
+        其中 -u 参数是github中没有该分支的时候需要带 -u  如果存在直接 git push 即可
+    -->
+
+    <!-- 查看远程项目github中的所有分支
+        git remote show orgin
+        
+    -->
+
+    <!-- 从远程项目github中把分支下载到本地
+        git checkout 远程分支的名称
+        示例：git checkout reg
+
+        下载下来并修改本地的分支名称
+        git checkout -b 本地分支名称  origin/远程分支名称
+        示例：git checkout -b reg orgin/register 
+    -->
+
+    <!-- 从远程仓库中拉取最新的代码到本地
+        git pull
+    -->
+
+    <!-- 删除远程仓库中的分支
+        git push origin --delete  远程仓库中分支名称
+    -->
     <script src="./index.js"></script>
 </body>
 
