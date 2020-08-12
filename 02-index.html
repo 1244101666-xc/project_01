@@ -147,6 +147,18 @@
     <!-- 删除远程仓库中的分支
         git push origin --delete  远程仓库中分支名称
     -->
+
+
+    <!-- 写代码到提交的过程
+        1、 git checkout -b login（分支名）  创建分支 
+        2、 git branch   查看所在分支
+        3、 git add .   存入暂存区
+        4、 git commit -m "提交代码到git仓库"
+        5、 git push -u origin login  第一次提交分支到github
+        6、 git checkout master  切换到主干
+        7、 git merge login    合并login分支到master主干上
+        8、 git push           追加代码到github
+    -->
     <script src="./index.js"></script>
 </body>
 
